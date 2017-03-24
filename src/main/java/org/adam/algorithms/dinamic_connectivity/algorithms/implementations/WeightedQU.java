@@ -40,7 +40,11 @@ public class WeightedQU implements UnionFinder {
     }
 
     private int findRoot(int i){
-        while (i !=  idArr[i]) i = idArr[i];
+        while (i !=  idArr[i]){
+            // grandparent
+            idArr[i] = idArr[idArr[i]];
+            i = idArr[i];
+        }
         return i;
     }
 
